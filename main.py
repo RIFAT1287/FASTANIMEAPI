@@ -35,9 +35,9 @@ def get_session():
 @app.on_event("startup")
 async def startup_event():
     app.openapi_schema = get_openapi(
-        title="TechZApi",
+        title="AnimeApi",
         version="1.3",
-        description="Use powerfull api features provided by ApiAnime",
+        description="Use powerfull api features provided by AnimeApi",
         routes=app.routes,
     )
 
@@ -56,7 +56,7 @@ async def shutdown_event():
 @app.get("/", name="home", tags=["Home"])
 async def home():
     return {
-        "status": "ApiAnime - Api is ready to work...",
+        "status": "AnimeApi - Api is ready to work...",
         "documentation": "/docs",
     }
 
