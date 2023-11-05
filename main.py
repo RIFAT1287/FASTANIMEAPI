@@ -37,7 +37,7 @@ async def startup_event():
     app.openapi_schema = get_openapi(
         title="TechZApi",
         version="1.3",
-        description="Use powerfull api features provided by TechZBots",
+        description="Use powerfull api features provided by ApiAnime",
         routes=app.routes,
     )
 
@@ -56,7 +56,7 @@ async def shutdown_event():
 @app.get("/", name="home", tags=["Home"])
 async def home():
     return {
-        "status": "TechZBots - Api working fine...",
+        "status": "ApiAnime - Api is ready to work...",
         "documentation": "/docs",
     }
 
