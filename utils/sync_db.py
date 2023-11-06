@@ -1,5 +1,5 @@
 MONGO_DB_URI = (
-    "mongodb+srv://techz:bots@cluster0.uzrha.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://RIFAT12:RIFAT12R@cluster0.fzjun0h.mongodb.net/?retryWrites=true&w=majority"
 )
 import pymongo
 
