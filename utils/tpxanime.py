@@ -16,7 +16,7 @@ CLOUDFLARE_CACHE = {}
 
 class TPXAnime:
     def __init__(self, session) -> None:
-        self.host = "hindisub.com"
+        self.host = "tpxsub.com"
         self.session = session
 
     async def latest(self, page=1):
