@@ -17,7 +17,7 @@ ANIME_CACHE = {}
 
 class GoGoApi:
     def __init__(self, session) -> None:
-        self.host = "https://gogoanime.run/"
+        self.host = "https://gogoanime.run"
         self.session = session
 
     async def latest(self, page=1):
