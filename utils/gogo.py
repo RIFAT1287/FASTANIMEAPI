@@ -290,7 +290,7 @@ class GoGoApi:
         response_html = response.text
         soup = bs(response_html, "html.parser")
         source_url = soup.select('meta[name="csrf-token"]')
-        token = source_url[0].attrs["content"]
+        token = source_url[0].attrs["content"] if source_url else None
 
         data = f"email={email}&password={password}&_csrf={token}"
 
