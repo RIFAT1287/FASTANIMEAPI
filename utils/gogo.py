@@ -285,7 +285,7 @@ class GoGoApi:
 
     def get_gogo_cookie(self, email, password):
         s = requests.session()
-        animelink = "https://gogoanimehd.io/login.html"
+        animelink = "https://gogoanime.run/login.html"
         response = s.get(animelink)
         response_html = response.text
         soup = bs(response_html, "html.parser")
