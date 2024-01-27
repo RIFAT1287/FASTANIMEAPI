@@ -154,7 +154,7 @@ class GoGoApi:
             eps.append(a)
         eps.reverse()
         return len(li), eps
-
+    hkkh
     async def episode(self, id, lang):
     global Gcookie
     if "cookie" not in Gcookie:
@@ -287,6 +287,9 @@ class GoGoApi:
         # Handle the case when 'div' is None
         # You might want to log a message or handle this case accordingly
         return data
+
+
+
 
             
 
