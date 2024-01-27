@@ -156,34 +156,33 @@ class GoGoApi:
         return len(li), eps
     hkkh
     async def episode(self, id, lang):
-    global Gcookie
-    if "cookie" not in Gcookie:
-        Gcookie = {
-            "time": time.time(),
-            "cookie": self.get_gogo_cookie(
-                "qwertytechz123@gmail.com", "P@8eqB7@YpJz5ea"
-            ),
-        }
+        global Gcookie
+        if "cookie" not in Gcookie:
+            Gcookie = {
+                "time": time.time(),
+                "cookie": self.get_gogo_cookie(
+                    "qwertytechz123@gmail.com", "P@8eqB7@YpJz5ea"
+                ),
+            }
 
-    if time.time() - Gcookie["time"] > 60 * 10:
-        Gcookie = {
-            "time": time.time(),
-            "cookie": self.get_gogo_cookie(
-                "qwertytechz123@gmail.com", "P@8eqB7@YpJz5ea"
-            ),
-        }
-    auth_gogo = Gcookie["cookie"]
+        if time.time() - Gcookie["time"] > 60 * 10:
+            Gcookie = {
+                "time": time.time(),
+                "cookie": self.get_gogo_cookie(
+                    "qwertytechz123@gmail.com", "P@8eqB7@YpJz5ea"
+                ),
+            }
+        auth_gogo = Gcookie["cookie"]
 
-    data = {}
-    data["DL"] = {}
+        data = {}
+        data["DL"] = {}
 
-    async with self.session.get(
-        f"https://{self.host}/{id}", cookies={"auth": auth_gogo}
-    ) as resp:
-        soup = bs(await resp.read(), "html.parser")
+        async with self.session.get(
+            f"https://{self.host}/{id}", cookies={"auth": auth_gogo}
+        ) as resp:
+            soup = bs(await resp.read(), "html.parser")
 
-    div = soup.find("div", "anime_muti_link")
-    if div:
+        div = soup.find("div", "anime_muti_link")
         a = div.find_all("a")
         embeds = []
 
@@ -283,13 +282,6 @@ class GoGoApi:
                 data["DUB"] = embeds
                 data["DL"]["DUB"] = dlink
             return data
-    else:
-        # Handle the case when 'div' is None
-        # You might want to log a message or handle this case accordingly
-        return data
-
-
-
 
             
 
