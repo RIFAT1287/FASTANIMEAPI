@@ -220,6 +220,7 @@ class GoGoApi:
             if error:
                 return data
             div = soup.find("div", "anime_muti_link")
+  
             a = div.find_all("a")
             embeds = []
 
