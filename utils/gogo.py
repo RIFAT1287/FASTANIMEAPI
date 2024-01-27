@@ -154,7 +154,7 @@ class GoGoApi:
             eps.append(a)
         eps.reverse()
         return len(li), eps
-    hkkh
+    #hkkh
     async def episode(self, id, lang):
         global Gcookie
         if "cookie" not in Gcookie:
