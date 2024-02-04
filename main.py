@@ -2,11 +2,9 @@ from typing import Literal
 from fastapi import FastAPI
 from utils.extractor.gogo_extractor import get_m3u8
 from utils.gogo import GoGoApi
-from utils.ud import get_urbandict
 from utils.db import DB
 from fastapi.responses import FileResponse
 from fastapi.openapi.utils import get_openapi
-from utils.extra import download
 from utils.animeworldin import AnimeWorldIN
 import aiohttp
 
