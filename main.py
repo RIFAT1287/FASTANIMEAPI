@@ -3,9 +3,10 @@ from fastapi import FastAPI
 from utils.extractor.gogo_extractor import get_m3u8
 from utils.gogo import GoGoApi
 from utils.db import DB
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse
 from fastapi.openapi.utils import get_openapi
 import aiohttp
+from theme import custom_ui_html, custom_ui_css
 
 app = FastAPI()
 
@@ -44,13 +45,9 @@ async def shutdown_event():
         await i[0].close()
 
 
-@app.get("/", name="home", tags=["Home"])
+@app.get("/", name="home", tags=["Home"], response_class=HTMLResponse)
 async def home():
-    return {
-        "Status": "FᴀsᴛAɴɪᴍᴇAᴘɪ Wᴀs Fɪɴᴇ. Usᴇ Nᴏᴡ..",
-        "Documention": "/doc",
-    }
-
+    return custom_ui_html
 
 
 # Gogoanime
