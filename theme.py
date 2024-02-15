@@ -5,7 +5,7 @@ custom_ui_html = """
 <html>
 <head>
     <title>FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</title>
-    <link rel="stylesheet" type="text/css" href="/custom_ui/custom_ui.css">
+    <link rel="stylesheet" type="text/css" href="custom_ui.css">
 </head>
 <body>
     <img src="https://telegra.ph/file/bde9c706821eacec414ed.jpg" alt="FastAnimeAPI Logo">
