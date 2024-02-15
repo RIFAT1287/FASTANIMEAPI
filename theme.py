@@ -8,7 +8,7 @@ custom_ui_html = """
     <link rel="stylesheet" type="text/css" href="/custom_ui/custom_ui.css">
 </head>
 <body>
-    <img src="https://via.placeholder.com/150" alt="FastAnimeAPI Logo">
+    <img src="https://telegra.ph/file/bde9c706821eacec414ed.jpg" alt="FastAnimeAPI Logo">
     <h1>Welcome to FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</h1>
     <p class="fade-in">Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
 
