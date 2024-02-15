@@ -8,17 +8,22 @@ custom_ui_html = """
     <link rel="stylesheet" type="text/css" href="/custom_ui/custom_ui.css">
 </head>
 <body>
+    <img src="https://via.placeholder.com/150" alt="FastAnimeAPI Logo">
     <h1>Welcome to FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</h1>
     <p class="fade-in">Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
 
+    <div class="rgb-line"></div>
+
     <h2 class="slide-in">API Endpoints</h2>
     <ul class="slide-in">
-        <li><a href="/docs/latest">Latest Anime Scrapper</a></li>
-        <li><a href="/docs/search">Search Anime</a></li>
-        <li><a href="/docs/anime">Anime Information</a></li>
-        <li><a href="/docs/episode">Episode Information</a></li>
-        <li><a href="/docs/stream">Episode Stream</a></li>
+        <li><a href="/docs/latest">Latest Anime Scrapper</a> - Get the latest released anime</li>
+        <li><a href="/docs/search">Search Anime</a> - Search for anime</li>
+        <li><a href="/docs/anime">Anime Information</a> - Get information about a specific anime</li>
+        <li><a href="/docs/episode">Episode Information</a> - Get information about a specific episode</li>
+        <li><a href="/docs/stream">Episode Stream</a> - Get stream links for an episode</li>
     </ul>
+
+    <div class="rgb-line"></div>
 </body>
 </html>
 """
@@ -48,6 +53,22 @@ custom_ui_css = """
     }
 }
 
+/* RGB Line Animation */
+@keyframes rgb {
+    0% {
+        background-color: red;
+    }
+    33% {
+        background-color: green;
+    }
+    67% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
 /* Apply fade-in animation to headings and paragraphs */
 h1, h2, p {
     animation: fade-in 2s ease-out;
@@ -68,6 +89,13 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* RGB Line Style */
+.rgb-line {
+    height: 5px;
+    width: 100%;
+    animation: rgb 5s infinite;
 }
 """
 
