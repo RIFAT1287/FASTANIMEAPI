@@ -5,7 +5,6 @@ from utils.gogo import GoGoApi
 from utils.db import DB
 from fastapi.responses import FileResponse
 from fastapi.openapi.utils import get_openapi
-from utils.animeworldin import AnimeWorldIN
 import aiohttp
 
 app = FastAPI()
