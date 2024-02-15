@@ -57,15 +57,19 @@ custom_ui_css = """
 @keyframes rgb {
     0% {
         background-color: red;
+        width: 0%;
     }
     33% {
         background-color: green;
+        width: 33%;
     }
     67% {
         background-color: blue;
+        width: 67%;
     }
     100% {
         background-color: red;
+        width: 100%;
     }
 }
 
@@ -98,4 +102,3 @@ a:hover {
     animation: rgb 5s infinite;
 }
 """
-
