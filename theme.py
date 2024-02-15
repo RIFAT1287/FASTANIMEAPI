@@ -1,37 +1,7 @@
 # theme.py
 
-custom_ui_html = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</title>
-    <link rel="stylesheet" type="text/css" href="custom_ui.css">
-</head>
-<body>
-    <img src="https://telegra.ph/file/bde9c706821eacec414ed.jpg" alt="FastAnimeAPI Logo">
-    <h1>Welcome to FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</h1>
-    <p class="fade-in">Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
-
-    <div class="rgb-line"></div>
-
-    <h2 class="slide-in">API Endpoints</h2>
-    <ul class="slide-in">
-        <li><a href="/docs/latest">Latest Anime Scrapper</a> - Get the latest released anime</li>
-        <li><a href="/docs/search">Search Anime</a> - Search for anime</li>
-        <li><a href="/docs/anime">Anime Information</a> - Get information about a specific anime</li>
-        <li><a href="/docs/episode">Episode Information</a> - Get information about a specific episode</li>
-        <li><a href="/docs/stream">Episode Stream</a> - Get stream links for an episode</li>
-    </ul>
-
-    <div class="rgb-line"></div>
-</body>
-</html>
-"""
-
-# theme.py
-
 custom_ui_css = """
-/* Custom UI Theme for FastAPI Documentation */
+/* CSS */
 
 /* Fade-in Animation for Headings and Paragraphs */
 @keyframes fade-in {
@@ -52,6 +22,22 @@ custom_ui_css = """
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* RGB Line Animation */
+@keyframes rgb {
+    0% {
+        background-color: red;
+    }
+    33% {
+        background-color: green;
+    }
+    67% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
     }
 }
 
@@ -77,23 +63,38 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Gradient Background Animation */
-@keyframes gradient-bg {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* RGB Line Style */
+.rgb-line {
+    height: 5px;
+    width: 100%;
+    animation: rgb 5s infinite;
 }
+"""
 
-/* Gradient Background Style */
-body {
-    background: linear-gradient(to right, red, green, blue);
-    background-size: 200% 200%;
-    animation: gradient-bg 10s infinite;
-}
+custom_ui_html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</title>
+    <link rel="stylesheet" type="text/css" href=custom_ui_css>
+</head>
+<body>
+    <img src="https://telegra.ph/file/bde9c706821eacec414ed.jpg" alt="FastAnimeAPI Logo">
+    <h1>Welcome to FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</h1>
+    <p class="fade-in">Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
+
+    <div class="rgb-line"></div>
+
+    <h2 class="slide-in">API Endpoints</h2>
+    <ul class="slide-in">
+        <li><a href="/docs/latest">Latest Anime Scrapper</a> - Get the latest released anime</li>
+        <li><a href="/docs/search">Search Anime</a> - Search for anime</li>
+        <li><a href="/docs/anime">Anime Information</a> - Get information about a specific anime</li>
+        <li><a href="/docs/episode">Episode Information</a> - Get information about a specific episode</li>
+        <li><a href="/docs/stream">Episode Stream</a> - Get stream links for an episode</li>
+    </ul>
+
+    <div class="rgb-line"></div>
+</body>
+</html>
 """
