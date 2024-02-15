@@ -9,47 +9,58 @@ custom_ui_html = """
 </head>
 <body>
     <h1>Welcome to FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</h1>
-    <p>Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
+    <p class="fade-in">Use the API endpoints listed below to interact with FᴀsᴛAɴɪᴍᴇAᴘɪ.</p>
 
-    <h2>API Endpoints</h2>
-    <ul>
-        <li><a href="/latest">Latest Anime Scrapper</a></li>
-        <li><a href="/search">Search Anime</a></li>
-        <li><a href="/anime">Anime Information</a></li>
-        <li><a href="/episode">Episode Information</a></li>
-        <li><a href="/stream">Episode Stream</a></li>
+    <h2 class="slide-in">API Endpoints</h2>
+    <ul class="slide-in">
+        <li><a href="/docs/latest">Latest Anime Scrapper</a></li>
+        <li><a href="/docs/search">Search Anime</a></li>
+        <li><a href="/docs/anime">Anime Information</a></li>
+        <li><a href="/docs/episode">Episode Information</a></li>
+        <li><a href="/docs/stream">Episode Stream</a></li>
     </ul>
 </body>
 </html>
 """
 
 custom_ui_css = """
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+/* Custom UI Theme for FastAPI Documentation */
+
+/* Fade-in Animation for Headings and Paragraphs */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-h1 {
-    color: #333;
+/* Slide-in Animation for Lists and Headings */
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-p {
-    color: #666;
+/* Apply fade-in animation to headings and paragraphs */
+h1, h2, p {
+    animation: fade-in 2s ease-out;
 }
 
-h2 {
-    color: #555;
-}
-
+/* Apply slide-in animation to lists */
 ul {
     list-style-type: none;
     padding: 0;
+    animation: slide-in 2s ease-out;
 }
 
-li {
-    margin-bottom: 10px;
-}
-
+/* Styling for Links */
 a {
     color: #007bff;
     text-decoration: none;
@@ -59,3 +70,4 @@ a:hover {
     text-decoration: underline;
 }
 """
+
