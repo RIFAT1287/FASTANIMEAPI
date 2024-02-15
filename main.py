@@ -27,9 +27,9 @@ def get_session():
 @app.on_event("startup")
 async def startup_event():
     app.openapi_schema = get_openapi(
-        title="FastAnimeApi",
-        version="1.3",
-        description="Use powerfull api features provided by AnimeApi",
+        title="FᴀsᴛAɴɪᴍᴇAᴘɪ",
+        version="1.0",
+        description="Usᴇ Pᴏᴡᴇʀꜰᴜʟʟ Aᴘɪ Fᴇᴀᴛᴜʀᴇs Pʀᴏᴠɪᴅᴇᴅ Bʏ Lᴏᴜɴɢᴇ Bᴏᴛs",
         routes=app.routes,
     )
 
@@ -48,8 +48,8 @@ async def shutdown_event():
 @app.get("/", name="home", tags=["Home"])
 async def home():
     return {
-        "status": "AnimeApi - Api is ready to work...",
-        "documentation": "/docs",
+        "𝚂𝚝𝚊𝚝𝚞𝚜": "FᴀsᴛAɴɪᴍᴇAᴘɪ Wᴀs Fɪɴᴇ. Usᴇ Nᴏᴡ..",
+        "DᴏᴄᴜᴍᴇɴTᴀᴛɪᴏɴ": "/doc",
     }
 
 
@@ -57,7 +57,7 @@ async def home():
 # Gogoanime
 
 
-@app.get("/gogo/latest", name="gogo latest", tags=["Gogo Anime"])
+@app.get("/latest", name="Latest Anime Scrapper", tags=["Gogo Anime"])
 async def gogo_latest(api_key: str, page: int = 1):
     """Get latest released animes from gogoanime
 
