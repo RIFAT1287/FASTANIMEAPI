@@ -63,7 +63,7 @@ a:hover {
 
 /* RGB Line Style */
 .rgb-line {
-    height: 5px;
+    height: 10px; /* Adjust the height here */
     width: 100%;
     animation: rgb 5s infinite;
 }
