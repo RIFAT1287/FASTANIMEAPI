@@ -47,8 +47,8 @@ async def shutdown_event():
 @app.get("/", name="home", tags=["Home"])
 async def home():
     return {
-        "𝚂𝚝𝚊𝚝𝚞𝚜": "FᴀsᴛAɴɪᴍᴇAᴘɪ Wᴀs Fɪɴᴇ. Usᴇ Nᴏᴡ..",
-        "DᴏᴄᴜᴍᴇɴTᴀᴛɪᴏɴ": "/doc",
+        "Status": "FᴀsᴛAɴɪᴍᴇAᴘɪ Wᴀs Fɪɴᴇ. Usᴇ Nᴏᴡ..",
+        "Documention": "/doc",
     }
 
 
@@ -56,13 +56,13 @@ async def home():
 # Gogoanime
 
 
-@app.get("/latest", name="Latest Anime Scrapper", tags=["Gogo Anime"])
+@app.get("/latest", name="Latest Anime Scrapper")
 async def gogo_latest(api_key: str, page: int = 1):
-    """Get latest released animes from gogoanime
+    """Get Latest Released Animes From
 
-    - page: Page number (default: 1)
+    - page: Page Number (Default: 1)
 
-    Price: 1 credits"""
+    Price: 1 BP"""
     if not await DB.is_user(api_key):
         return {"success": False, "error": "Invalid api key"}
 
@@ -75,11 +75,11 @@ async def gogo_latest(api_key: str, page: int = 1):
     return {"success": True, "results": data}
 
 
-@app.get("/gogo/search", name="gogo search", tags=["Gogo Anime"])
+@app.get("/search", name="Search Anime")
 async def gogo_search(api_key: str, query: str):
-    """Search animes on gogoanime
+    """Search Animes
 
-    - query: Search query
+    - query: Search Query
 
     Price: 1 credits"""
     if not await DB.is_user(api_key):
@@ -94,11 +94,11 @@ async def gogo_search(api_key: str, query: str):
     return {"success": True, "results": data}
 
 
-@app.get("/gogo/anime", name="gogo anime", tags=["Gogo Anime"])
+@app.get("/anime", name="Anime Information")
 async def gogo_anime(api_key: str, id: str):
-    """Get anime info from gogoanime
+    """Get Anime Information 
 
-    - id : Anime id, Ex : horimiya-dub
+    - id : Anime Id, Example : naruto-dub
 
     Price: 1 credits"""
     if not await DB.is_user(api_key):
@@ -113,13 +113,13 @@ async def gogo_anime(api_key: str, id: str):
     return {"success": True, "results": data}
 
 
-@app.get("/gogo/episode", name="gogo episode", tags=["Gogo Anime"])
+@app.get("/episode", name="Episode Information")
 async def gogo_episode(
     api_key: str, id: str, lang: Literal["sub", "dub", "both", "any"] = "sub"
 ):
-    """Get episode embed links from gogoanime
+    """Get Episode Information 
 
-    - id : Episode id, Ex : horimiya-dub-episode-3
+    - id : Episode id, Ex : naruto-dub-episode-3
     - lang : sub | dub | both | any
 
     Price: 1 credits for sub and dub, 2 credits for both"""
@@ -135,9 +135,9 @@ async def gogo_episode(
     return {"success": True, "results": data}
 
 
-@app.get("/gogo/stream", name="gogo stream", tags=["Gogo Anime"])
+@app.get("/stream", name="Episode Stream")
 async def gogo_stream(api_key: str, url: str):
-    """Get episode stream links (m3u8) from gogoanime
+    """Get Episode Stream Links (m3u8 for Download Faster)
 
     - url : Episode url, Ex : https://anihdplay.com/streaming.php?id=MTUyODYy&title=Horimiya+%28Dub%29+Episode+3
 
@@ -151,24 +151,4 @@ async def gogo_stream(api_key: str, url: str):
         return {"success": False, "error": str(e)}
 
     data = await get_m3u8(get_session(), url)
-    return {"success": True, "results": data}
-
-
-
-@app.get("/animeworldin/stream", name="animeworldin stream", tags=["AnimeWorldIN"])
-async def animeworldin_stream(api_key: str, url: str):
-    """Get episode stream links (m3u8) from anime-world.in
-
-    - url : Episode url, Ex : https://awstream.net/watch?v=91Vzzmx2Ez
-
-    Price: 1 credits"""
-    if not await DB.is_user(api_key):
-        return {"success": False, "error": "Invalid api key"}
-
-    try:
-        await DB.reduce_credits(api_key, 1)
-    except Exception as e:
-        return {"success": False, "error": str(e)}
-
-    data = await AnimeWorldIN(get_session()).stream(url)
     return {"success": True, "results": data}
