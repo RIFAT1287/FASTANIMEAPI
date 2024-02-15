@@ -1,4 +1,5 @@
 fastapi
+fastapi[all] redoc
 aiohttp
 bs4
 pillow
