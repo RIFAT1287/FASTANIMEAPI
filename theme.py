@@ -1,8 +1,6 @@
 # theme.py
 
 custom_ui_css = """
-/* CSS */
-
 /* Fade-in Animation for Headings and Paragraphs */
 @keyframes fade-in {
     from {
@@ -71,12 +69,14 @@ a:hover {
 }
 """
 
-custom_ui_html = """
+custom_ui_html = f"""
 <!DOCTYPE html>
 <html>
 <head>
     <title>FᴀsᴛAɴɪᴍᴇAᴘɪ Documentation</title>
-    <link rel="stylesheet" type="text/css" href=custom_ui_css>
+    <style>
+        {custom_ui_css}
+    </style>
 </head>
 <body>
     <img src="https://telegra.ph/file/bde9c706821eacec414ed.jpg" alt="FastAnimeAPI Logo">
