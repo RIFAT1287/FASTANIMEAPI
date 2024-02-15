@@ -28,6 +28,8 @@ custom_ui_html = """
 </html>
 """
 
+# theme.py
+
 custom_ui_css = """
 /* Custom UI Theme for FastAPI Documentation */
 
@@ -53,26 +55,6 @@ custom_ui_css = """
     }
 }
 
-/* RGB Line Animation */
-@keyframes rgb {
-    0% {
-        background-color: red;
-        width: 0%;
-    }
-    33% {
-        background-color: green;
-        width: 33%;
-    }
-    67% {
-        background-color: blue;
-        width: 67%;
-    }
-    100% {
-        background-color: red;
-        width: 100%;
-    }
-}
-
 /* Apply fade-in animation to headings and paragraphs */
 h1, h2, p {
     animation: fade-in 2s ease-out;
@@ -95,10 +77,23 @@ a:hover {
     text-decoration: underline;
 }
 
-/* RGB Line Style */
-.rgb-line {
-    height: 5px;
-    width: 100%;
-    animation: rgb 5s infinite;
+/* Gradient Background Animation */
+@keyframes gradient-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Gradient Background Style */
+body {
+    background: linear-gradient(to right, red, green, blue);
+    background-size: 200% 200%;
+    animation: gradient-bg 10s infinite;
 }
 """
