@@ -42,6 +42,7 @@ custom_ui_css = """
 /* Apply fade-in animation to headings and paragraphs */
 h1, h2, p {
     animation: fade-in 2s ease-out;
+    color: white; /* Text color */
 }
 
 /* Apply slide-in animation to lists */
@@ -49,11 +50,12 @@ ul {
     list-style-type: none;
     padding: 0;
     animation: slide-in 2s ease-out;
+    color: white; /* Text color */
 }
 
 /* Styling for Links */
 a {
-    color: #007bff;
+    color: #ccc; /* Link color */
     text-decoration: none;
 }
 
@@ -66,6 +68,12 @@ a:hover {
     height: 10px; /* Adjust the height here */
     width: 100%;
     animation: rgb 5s infinite;
+}
+
+/* Body Style */
+body {
+    background-color: black; /* Background color */
+    color: white; /* Default text color */
 }
 """
 
